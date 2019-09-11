@@ -20,7 +20,7 @@ task :csv do
     points
   )")
 
-  csv_text = File.read("18_def.csv")
+  csv_text = File.read("19_def.csv")
   csv = CSV.parse(csv_text, :headers => true)
   csv.each do |row|
     db.execute("INSERT INTO players (

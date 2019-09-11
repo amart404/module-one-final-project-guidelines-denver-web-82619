@@ -1,3 +1,4 @@
 require_relative '../config/environment'
 
-Cli.main_menu
+Cli.get_user
+Cli.pick_team
