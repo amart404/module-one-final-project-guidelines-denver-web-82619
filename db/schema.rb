@@ -19,11 +19,10 @@ ActiveRecord::Schema.define(version: 2019_09_10_211750) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string "name"
-    t.integer "users_id"
-    t.integer "players_id"
-    t.index ["players_id"], name: "index_teams_on_players_id"
-    t.index ["users_id"], name: "index_teams_on_users_id"
+    t.integer "user_id"
+    t.integer "player_id"
+    t.index ["player_id"], name: "index_teams_on_player_id"
+    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
