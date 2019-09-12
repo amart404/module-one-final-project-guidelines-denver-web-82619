@@ -45,12 +45,7 @@ class Cli
         is_user = PROMPT.yes?("Are you a returning user?")
         if is_user
             usernames = User.all.map {|user| user.name}.sort.uniq
-            old_new = PROMPT.yes?("Would you like to make a new team?")
-            if old_new
-                team_creator
-            else
-                @@new_user = PROMPT.select("\nSelect your team:", (usernames))
-            end
+            @@new_user = PROMPT.select("\nSelect your team:", (usernames))
         else
             team_creator
         end
@@ -60,7 +55,7 @@ class Cli
     end
 
     def self.team_creator
-        @@new_user = PROMPT.ask("Enter new team name: ", default: ENV['USER'])
+        @@new_user = PROMPT.ask("Enter team name: ", default: ENV['USER'])
         new_team = User.create(name: @@new_user)
 
         qb = Player.where(position: "QB")
@@ -103,7 +98,7 @@ class Cli
 
         if total_points < 65.0
             puts Paint["\nWatch more football! (Consider re-drafting)", "#830606", :bold]
-        elsif total_points > 110.0
+        elsif total_points > 90.0
             puts Paint["\nNever choose any other team", :green, :bold]
         else
             puts Paint["\nNot bad", :yellow, :bold]
@@ -121,7 +116,19 @@ class Cli
     end
 
     def self.re_draft
-        try_again = PROMPT.yes?("Would you like to try again?")
+        erase_team = PROMPT.yes?("Would you like to re-draft this team? (This will delete all current players)")
+        if erase_team
+            Team.all.each do |team|
+                if team.user.name == @@new_user
+                    team.destroy
+                end
+            end
+            puts Paint["\nEnter current team name", :red]
+            team_creator
+            final_score 
+            score_breakdown
+        end
+        try_again = PROMPT.yes?("Would you like to start again?")
         if try_again
             team_setup
         else
