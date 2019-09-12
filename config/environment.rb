@@ -3,6 +3,8 @@ require 'csv'
 require 'sinatra/activerecord'
 require 'require_all'
 require 'tty-prompt'
+require 'tty-box'
+require 'paint'
 require_all 'lib'
 
 Bundler.require
