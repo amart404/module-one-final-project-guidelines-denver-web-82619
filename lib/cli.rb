@@ -43,6 +43,7 @@ class Cli
 
     def self.team_setup
         is_user = PROMPT.yes?("Are you a returning user?")
+        puts ""
         if is_user
             usernames = User.all.map {|user| user.name}.sort.uniq
             @@new_user = PROMPT.select("\nSelect your team:", (usernames))
@@ -56,6 +57,7 @@ class Cli
 
     def self.team_creator
         @@new_user = PROMPT.ask("Enter team name: ", default: ENV['USER'])
+        puts ""
         new_team = User.create(name: @@new_user)
 
         qb = Player.where(position: "QB")
@@ -117,6 +119,7 @@ class Cli
 
     def self.re_draft
         erase_team = PROMPT.yes?("Would you like to re-draft this team? (This will delete all current players)")
+        puts ""
         if erase_team
             Team.all.each do |team|
                 if team.user.name == @@new_user
@@ -124,11 +127,13 @@ class Cli
                 end
             end
             puts Paint["\nEnter current team name", :red]
+            puts ""
             team_creator
             final_score 
             score_breakdown
         end
         try_again = PROMPT.yes?("Would you like to start again?")
+        puts ""
         if try_again
             team_setup
         else
