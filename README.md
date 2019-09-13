@@ -22,6 +22,6 @@ After your results are shown you can make some changes to try your other players
 
 ![alternativetext](readme_pics/re-draft_question.png)
     
-[![alt text](video_screen_shot.png)](https://drive.google.com/file/d/1oDAvMuqhizVC_1f_U6Dxo69EZZFN18r5/view?usp=sharing "Application Walk Through")
+[![alt text](readme_pics/video_screen_shot.png)](https://drive.google.com/file/d/1oDAvMuqhizVC_1f_U6Dxo69EZZFN18r5/view?usp=sharing "Application Walk Through")
     
 
