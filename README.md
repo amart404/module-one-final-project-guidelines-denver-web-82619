@@ -1,4 +1,5 @@
 <h1>Flatiron Fantasy Football Point Predictor</h1>
+Built by Aaron Martinez and Arlene George
 
 ![alternativetext](readme_pics/Start_screen.png)
 
@@ -19,7 +20,7 @@ After all your players are slected you will see a total score prediction and a b
 After your results are shown you can make some changes to try your other players. Just respond with a Y to the question would you like to re-draft this team?. Note this will delte your current team. 
 
 
-![alternativetext](readme_pics/re-drat_question.png)
+![alternativetext](readme_pics/re-draft_question.png)
     
     
 
