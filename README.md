@@ -21,6 +21,8 @@ After your results are shown you can make some changes to try your other players
 
 
 ![alternativetext](readme_pics/re-draft_question.png)
+
+Click on the video below to see a walk through of the application
     
 [![alt text](readme_pics/video_screen_shot.png)](https://drive.google.com/file/d/1oDAvMuqhizVC_1f_U6Dxo69EZZFN18r5/view?usp=sharing "Application Walk Through")
     
