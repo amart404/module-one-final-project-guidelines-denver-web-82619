@@ -103,7 +103,7 @@ class Cli
 
         if total_points < 65.0
             puts Paint["\nWatch more football! (Consider re-drafting)", "#830606", :bold]
-        elsif total_points > 110.0
+        elsif total_points > 90.0
             puts Paint["\nNever choose any other team", :green, :bold]
         else
             puts Paint["\nNot bad", :yellow, :bold]
